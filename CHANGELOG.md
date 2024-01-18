@@ -1,3 +1,13 @@
+## 1.0.0 (2024-01-18)
+
+### BREAKING CHANGE
+
+- It's time !
+
+### Feat
+
+- enable first version
+
 ## 0.2.0 (2024-01-18)
 
 ### BREAKING CHANGE
