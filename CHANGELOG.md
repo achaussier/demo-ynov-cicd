@@ -1,3 +1,10 @@
+## 0.1.1 (2024-01-18)
+
+### Fix
+
+- **auth**: fix default value for LDAP server
+- **auth**: fix bad option name
+
 ## 0.1.0 (2024-01-18)
 
 ### Feat
