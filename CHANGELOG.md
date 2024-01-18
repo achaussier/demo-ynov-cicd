@@ -1,3 +1,13 @@
+## 0.2.0 (2024-01-18)
+
+### BREAKING CHANGE
+
+- Relates #10
+
+### Feat
+
+- replace REST by GraphQL
+
 ## 0.1.1 (2024-01-18)
 
 ### Fix
