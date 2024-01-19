@@ -1,0 +1,38 @@
+---
+
+name: Documentation
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  deploy-docs:
+    needs: build
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.PAT }}"
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Install MKDocs
+        run: pip install -r requirements.txt
+      - name: Build MKDocs Documentation
+        run: mkdocs build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
