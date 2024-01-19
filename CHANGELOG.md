@@ -1,3 +1,9 @@
+## 1.1.0 (2024-01-19)
+
+### Feat
+
+- add new feature
+
 ## 1.0.0 (2024-01-18)
 
 ### BREAKING CHANGE
