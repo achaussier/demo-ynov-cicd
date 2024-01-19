@@ -1,3 +1,9 @@
+## 1.3.0 (2024-01-19)
+
+### Feat
+
+- add mkdocs management with basic documentation
+
 ## 1.2.0 (2024-01-19)
 
 ### Feat
