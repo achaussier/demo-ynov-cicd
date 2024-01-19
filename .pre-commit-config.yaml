@@ -9,6 +9,7 @@ repos:
     -   id: check-yaml
         args: [--unsafe]
     -   id: check-added-large-files
+        args: ['--maxkb=900']
 
 -   repo: https://github.com/commitizen-tools/commitizen
     rev: v3.13.0 # automatically updated by Commitizen
