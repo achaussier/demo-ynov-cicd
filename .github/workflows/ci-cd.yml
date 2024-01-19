@@ -33,3 +33,19 @@ jobs:
         with:
           push: true
           tags: rg.fr-par.scw.cloud/demo-ynov-cicd/demoapp:${{github.sha}}
+
+  deploy:
+    needs: dockerize
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use CLI
+        uses: scaleway/action-scw@v0
+        with:
+          args: container container create name=demoapp registry-image=rg.fr-par.scw.cloud/demo-ynov-cicd/demoapp:${{github.sha}} port=80 namespace-id=${{ secrets.SCW_NAMESPACE_ID }} deploy=true min-scale=1 max-scale=1
+          save-config: true
+          export-config: true
+          version: v2.26.0
+          access-key: ${{ secrets.SCW_ACCESS_KEY }}
+          secret-key: ${{ secrets.SCW_SECRET_KEY }}
+          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
