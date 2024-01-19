@@ -1,2 +1,4 @@
 commitizen==3.13.0
+mkdocs==1.5.3
+mkdocs-material==9.5.4
 pre-commit==3.6.0
